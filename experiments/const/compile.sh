@@ -1,0 +1,1 @@
+gcc -c const.c const.o 

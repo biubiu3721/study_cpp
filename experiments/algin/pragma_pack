@@ -1,0 +1,60 @@
+
+
+// pragma is a abbriviation of pragmatic.
+// 翻译成语用或者落地为比较容易区分。
+
+#define PRAGMA_ALGIN_NUM 4 
+#pragma pack(PRAGMA_ALGIN_NUM)  
+struct Test1  
+{  
+    char c;  // size=1, align module = min(sizeof(char), PRAGMA_ALGIN_NUM) = 1, offset=0, 
+    short sh;  // size=2, align module = min(sizeof(short), PRAGMA_ALGIN_NUM) = 2, offset=2, 
+    int a;  // size=4, align module = min(sizeof(int), PRAGMA_ALGIN_NUM) = 2, offset=4,
+    float f;  // size=4, align module = min(sizeof(float), PRAGMA_ALGIN_NUM) = 4, offset=8,
+    int *p;  // size=4, align module = min(sizeof(int*), PRAGMA_ALGIN_NUM) = 4, offset=12,
+    char *s;  // size=4, align module = min(sizeof(char*), PRAGMA_ALGIN_NUM) = 4, offset=16,
+    double d;  // size=8, align module = min(sizeof(char*), PRAGMA_ALGIN_NUM) = 4, offset=20,
+}; // total size = align(28, min(sizeof(double), PRAGMA_ALGIN_NUM)) = 28
+
+
+struct Test2  
+{  
+    char c;   // size=1, align module = min(sizeof(char), PRAGMA_ALGIN_NUM) = 1, offset=0.
+    double d; // size=8, align module = min(sizeof(double), PRAGMA_ALGIN_NUM) = 4, offset=4.
+    int a;   // size = 4, align module = min(sizeof(int), PRAG_ALGIN_NUM) = 4, offset = 4+8 = 12.
+    short sh;  // size = 2 , algin module = min(sizeof(int), PRAG_ALGIN_NUM) = 2, offset = 12 + 4 = 16
+    float f;  // size = 4, algin module = min(sizeof(float), PRAGMA_ALGIN_NUM) = 4, offset = algined(16+2, 4) = 20. 
+    int *p;   // offset = algined(20+4, 4) = 24
+    char *s;  // offset = aligned(28+4, 1) = 28        
+}; // total size = align(32, min(sizeof(double), PRAGMA_ALGIN_NUM)) = 32
+
+#undef PRAGMA_ALGIN_NUM
+#define PRAGMA_ALGIN_NUM 8
+#pragma pack(PRAGMA_ALGIN_NUM)  
+struct Test3
+{  
+    char c;  // size=1, align module = min(sizeof(char), PRAGMA_ALGIN_NUM) = 1, offset=0, 
+    short sh;  // size=2, align module = min(sizeof(short), PRAGMA_ALGIN_NUM) = 2, offset=2, 
+    int a;  // size=4, align module = min(sizeof(int), PRAGMA_ALGIN_NUM) = 2, offset=4,
+    float f;  // size=4, align module = min(sizeof(float), PRAGMA_ALGIN_NUM) = 4, offset=8,
+    int *p;  // size=4, align module = min(sizeof(int*), PRAGMA_ALGIN_NUM) = 4, offset=12,
+    char *s;  // size=4, align module = min(sizeof(char*), PRAGMA_ALGIN_NUM) = 4, offset=16,
+    double d;  // size=8, align module = min(sizeof(char*), PRAGMA_ALGIN_NUM) = 8, offset=24,
+}; // total size = align(32, min(sizeof(double), PRAGMA_ALGIN_NUM)) = 32
+
+
+#undef PRAGMA_ALGIN_NUM
+#define PRAGMA_ALGIN_NUM 4
+#pragma pack(PRAGMA_ALGIN_NUM)  
+struct Test4 
+{  
+    char c;  offset = 0, size = 1 , algin = 1
+    short sh;  offset = 2, size = 2 , align = 2
+    int a;   // offset = 4, size = 4 , align = 4
+    float f;  // offset = 8 , size = 4, align = 4
+    int *p;   // offset = 12, size = 4 , align = 4
+    char *s;  // offset = 16, size = 4 , align = 4
+    double d;  // offset = 20, size = 8, align = 4
+    static double sb; // 0 ddr 
+    static int sn;    // 0 ddr
+}; // total size = align(28, min(sizeof(double), PRAGMA_ALGIN_NUM)) = 28
