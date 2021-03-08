@@ -5,9 +5,20 @@ Introduction:
 2. Map is a container.
 3.
 */
-
+// Include
+//1. Related
+//2. System
+//3. C Include
+#include <cstdio>
+#include <cstring>
+#include <cmath>
+# include <algorithm>
+//4. C++ include
 #include <iostream>
 #include <map> // >= c++11
+//5. local.
+
+#define mem(x,y) memset(x,y,sizeof(x))
 
 /*****************************************
 C++ pair用法
@@ -16,7 +27,7 @@ C++ pair用法
 参数：T1是第一个值的数据类型，T2是第二个值的数据类型。
 功能：pair将一对值组合成一个值，这一对值可以具有不同的数据类型（T1和T2），
 两个值可以分别用pair的两个公有函数first和second访问。
-具体用法：
+i具体用法：
 1.定义（构造）
     1     pair<int, double> p1;  //使用默认构造函数
     2     pair<int, double> p2(1, 2.4);  //用给定值初始化
@@ -43,3 +54,6 @@ int MapStudyBeginEnd();
 int MapStudyEmpty();
 /* Test container size() */
 int MapStudySize();
+
+/* Test Map compare */
+int MapStudyCmp();
