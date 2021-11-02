@@ -1,0 +1,43 @@
+# content
+# 1. Target...: prerequisites ...
+#     1.1 targets is  object file, label, executable
+#     1.2 prequisites is demand object and files of targets
+#
+# 2.command
+#     * define commands
+#     * Shell + make command
+#     * if any file in prequisites is newer targets, commands will be execute.
+#
+# 3. Variable 
+#     $@ 
+#     $^
+#     $< 
+#
+#
+edit: main.o kdb.o command.o display.o insert.o search.o files.o utils.o 
+    cc -o edit main.o kbd.o command.o display.o insert.o search.o files.o utils.o 
+
+main.o: main.c defs.h 
+    cc -c main.c
+
+kbd.o: kbd.c defs.h command.h
+    cc -c kbd.c
+
+command.o: command.c defs.h command.h
+    cc -c command.c
+display.o: diplay.c defs.h buffer.h
+    cc -c display.c
+insert.o: insert.c defs.h buffer.h
+    cc -c insert.c 
+search.o: search.c defs.h buffer.h
+    cc -c search.c 
+file.o: files.c defs.h command.h
+    cc -c files.c
+util.o: utils.c defs.h
+    cc -c utils.c
+
+clear:
+    rm edit main.o kbd.o command.o display.o insert.o search.o files.o utils.o 
+        
+                                                                       
+~                     
