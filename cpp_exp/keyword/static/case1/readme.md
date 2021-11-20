@@ -9,26 +9,3 @@
  *        available      project->file  local -> global
  *        existance      keep whole     keep whole
 */
-
-#include <iostream>
-#define COUT std::cout
-#define ENDL std::endl;
-void fn();
-static int n;
-static int nn;
-
-int main()
-{
-    COUT << n << ENDL;
-    n = 20;
-    COUT << n << ENDL;
-    fn();
-    COUT << n << ENDL;
-}
-void fn()
-{
-    static int local_n;
-    n++;
-    COUT << n << ENDL;
-    COUT << "local_n " << local_n << ENDL;
-}

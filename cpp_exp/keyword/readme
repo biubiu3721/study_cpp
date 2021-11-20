@@ -1,0 +1,20 @@
+
+c++11 has 73 kewords.
+    New Keywords: alignas,alignof, char16_t, char32_t,
+                  constexpr,decltype, noexcept,nullptr, 
+                  static_assert,thread_local
+
+
+
+
+* text, data section  heap, Stack  
+    * data section includes bss and data
+        * BSS(Block Started by Symbol) 
+            * Init by system.
+            * bss stores uninit data or the data inited as 0.
+        * Data
+            * data stores inited data.
+            * rodata stores read only data.
+    
+* variable, static variable, const variable
+     
