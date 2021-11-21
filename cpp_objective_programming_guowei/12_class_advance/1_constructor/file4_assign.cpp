@@ -1,7 +1,3 @@
-// 
-//
-//
-
 #include "../../include/log.h"
 
 class MyClass 

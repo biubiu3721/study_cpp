@@ -2,13 +2,15 @@
 /**
  * Note
  * 3.3 copy construction fucntion.
- *     * X::X(X &), X::X(const X &)
+ *     * X::X(X &), X::X(const X &) 
  *     * Usage:
+ *         
  *         * Three situation:
  *            * A a1(a2);
  *            * func(A a);
  *            * return (A) a;
  *         * Attention:
+ *             * param must be "&".
  *             * The Copy Constructor must be exist, if you don't write it, the compiler will write.
  *             * No param constructor may not be exist, if you don't write "any" constructor, 
  *               then the compiler will write.
@@ -40,7 +42,7 @@ class B
     public:
         int v;
         B(int n){v = n;};
-        B(const B & rb)
+        B(const B &rb) // must be &.
         {
             v = rb.v;
             COUT << "Copy Constructor Called" << ENDL;
@@ -71,12 +73,44 @@ B func()
     return b;
 }
 
+class A
+{
+
+    public:
+        int x;
+        // : is a way to init member variable especially const var.
+        //  equal to { int x = x_, ...}
+        A(int x_):x(x_) 
+        {
+            COUT << x << " Constructor called" << ENDL;
+        }
+        A(const A & a)
+        {
+            x = 2 + a.x;
+            COUT << "Copy Called" << ENDL;
+        }
+        ~A(){ COUT << x << " Destructor called." << ENDL;}
+};
+
+A f()
+{
+    A b(10);
+    return b;
+}
+void Case3()
+{
+    COUT << "Step in Case3" << ENDL;
+    A a(1);
+    a = f(); 
+    COUT << "Step out Case3" << ENDL;
+}
 int main()
 {
     Case1();
     // 调用create函数时，编译器偷偷地增加了一个参数，传入了p的地址，直接在函数内部构造了temp对象
     B temp = func();
     COUT << func().v << ENDL;
+    Case3();
 }
 
 

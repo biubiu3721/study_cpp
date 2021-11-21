@@ -6,7 +6,7 @@
 class Test
 {
     public:
-        Test(int n)
+        Test(int n) // This is a type conversion constructor.
         {
             COUT << "first constructor" << ENDL;
             COUT << "Got " << n << ENDL;
@@ -27,9 +27,10 @@ class Test
 static void Case0()
 {
     // TODO: Test array = 1? // Equal to Test array(1).
-    // Because copy constructor is shared by all class. 
-    // So this sentence is optimized by compiler 
-    // "from Test temp(param); Test arry = temp" to "Test array(param)".
+    //     Because copy constructor is shared by all class. 
+    //     So this sentence is optimized by compiler 
+    //     "from Test temp(param); Test arry = temp" to "Test array(param)".
+    //     Refer to type conversion construtor. 
     COUT << " Test array[3] = {(3,2), Test(1, 2)};:" << ENDL;
     Test array0[3] = {3, Test(1, 2)};
     Test array1[3] = {(3, 4), Test(1, 2)};
