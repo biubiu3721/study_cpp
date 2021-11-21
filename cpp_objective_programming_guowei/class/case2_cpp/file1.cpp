@@ -32,7 +32,7 @@ void CEmployee::AverageSalary(CEmployee e1, CEmployee e2)
 
 int main()
 {
-    CEmployee e;
+    CEmployee e;case2_cpp
     // // ‘char CEmployee::sz_name [30]’ is private within this context
     // strcpy(e.sz_name, "Tom123456789"); 
     e.setName((char*)"Tom"); // ok
