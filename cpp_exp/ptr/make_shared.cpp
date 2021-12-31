@@ -11,7 +11,5 @@ int main()
     DEBUG() << foo2 << " " << *foo2 <<  ENDL;
     DEBUG() << bar << " " << *bar << ENDL;
     DEBUG() << baz << " " << baz->first << " " << baz->second << ENDL;
-
-
     ;
 }
