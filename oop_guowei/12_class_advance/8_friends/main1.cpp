@@ -16,6 +16,6 @@ class CCircle
 int main()
 {
     CCircle a_shape;
-    a_shape.center.x = 0;
+    //a_shape.center.x = 0;
 
 }
