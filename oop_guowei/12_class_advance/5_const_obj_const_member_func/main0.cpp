@@ -18,7 +18,7 @@ int Sample::GetValue() const
 
 int main()
 {
-    INFO() << "Start Program." << ENDL;   
+    INFO() << "Start Program." << ENDL;
     const Sample o;
     // o.value = 100;
     // o.func(); // wrong.
