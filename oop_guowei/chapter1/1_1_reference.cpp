@@ -21,26 +21,26 @@ void swap(int & a, int & b)
 void case2()
 {
     int n1 = 1, n2 = 2;
-    std::cout << "n1, n2 " << n1 << n2 << std::endl; 
+    std::cout << "n1, n2 " << n1 << n2 << std::endl;
     swap(n1, n2);
-    std::cout << "n1, n2 " << n1 << n2 << std::endl; 
+    std::cout << "n1, n2 " << n1 << n2 << std::endl;
 }
 
-int n = 4; 
-int & SetValue() 
+int n = 4;
+int & SetValue()
 {
     return n;
-}; 
+};
 void case3()
 {
-    SetValue() = 40;    
+    SetValue() = 40;
     std::cout << SetValue() << std::endl;
 
 }
 
 
 int main()
-{ 
+{
 
     case1();
     case2();

@@ -34,7 +34,7 @@ int main()
     grand * grand_ptr = new son;
     father * father_ptr = new son;
     son * son_ptr = new son;
-    DEBUG() << "grand ptr:  "; 
+    DEBUG() << "grand ptr:  ";
     grand_ptr->Info();
     DEBUG() << "father ptr:  ";
     father_ptr->Info();

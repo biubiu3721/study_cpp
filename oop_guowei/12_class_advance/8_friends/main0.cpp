@@ -31,6 +31,6 @@ int MostExpensiveCar( CCar cars[], int total)
 
 int main()
 {
-    INFO() << "Start"<<ENDL; 
+    INFO() << "Start"<<ENDL;
     return 0;
 }
