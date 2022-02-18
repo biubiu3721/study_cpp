@@ -27,7 +27,8 @@ class A
             printf("Default Construct is called.\n");
             x = -1;
         }
-        A(const A &a)
+        A(A &a)
+        //A(const A &a)
         {
             printf("copy constructor is called.\n");
             x = 1;
@@ -51,7 +52,7 @@ void func2()
     // However, the copy constructor hasn't been called. 
     // In my opinion, compiler will check grammar of "=" as assign. but actually no copy 
     // has been called.
-    A a1 = A(1); 
+
 }
 
 // compare copy and assign.
