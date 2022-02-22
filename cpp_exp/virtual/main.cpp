@@ -60,14 +60,6 @@ int exp1()
 
 int exp2()
 {
-<<<<<<< HEAD
-    son *son_ptr = new grand;
-    return 0;
-}
-int main()
-{
-    exp2();
-=======
     //son *son_ptr = new grand;
     return 0;
 }
@@ -109,6 +101,5 @@ int main()
 {
     //exp2();
     test_vptr();
->>>>>>> [C++][vptr] experiments
     return 0;
 }
