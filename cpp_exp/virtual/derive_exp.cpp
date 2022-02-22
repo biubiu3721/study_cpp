@@ -29,6 +29,7 @@ class son : public father
 };
 
 
+
 int main()
 {
     grand * grand_ptr = new son;
