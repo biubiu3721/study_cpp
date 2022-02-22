@@ -34,7 +34,8 @@ class son : public father
 };
 
 
-int main()
+
+int exp1()
 {
     grand * grand_ptr = new son;
     father * father_ptr = new son; 
@@ -46,4 +47,16 @@ int main()
     father_ptr->Info(); // Info(*father)
     DEBUG() << "son ptr:  ";
     son_ptr->Info(); // Info(*son)
+    return 0;
+}
+
+int exp2()
+{
+    son *son_ptr = new grand;
+    return 0;
+}
+int main()
+{
+    exp2();
+    return 0;
 }
